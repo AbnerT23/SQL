@@ -22,6 +22,11 @@ ON cust.order_id=FEB.orderid
 WHERE length(orderid) = 6 
 AND orderid <> 'Order ID'
 
+SELECT Product, SUM(quantity)
+FROM BIT_DATABASE.FebSales
+WHERE location like '%Los Angeles%'
+GROUP BY Product;
+
 #4. Which product was the cheapest one sold in January, and what was the price? 
 SELECT distinct Product, price
 FROM BIT_DB.JanSales
